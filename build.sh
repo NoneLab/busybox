@@ -33,6 +33,9 @@ mount -t sysfs sysfs /sys
 
 echo "[None] bootup"
 
+mkdir /newroot
+mount -t ext4 /dev/vda /newroot
+exec switch_root /newroot /sbin/init
 exec /bin/sh
 EOF
 
